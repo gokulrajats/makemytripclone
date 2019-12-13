@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<head>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <link rel="icon" type="image/x-icon" href="https://www.imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/favicon.ico">
+        <link rel="stylesheet" href="./font/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+                <link rel="stylesheet" type="text/css" href="style.css">
+                    <title>MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights &amp; Holiday</title>
+                </head>
+
+<body class="">
+        <div class="displayOffer" id="add">
+                <div class="addOffer">
+                        <!-- <div class="primaryBtn modalClose" onclick="close()">
+                                X
+                            </div> -->
+                    <div class="inputBox">
+                        <label>Enter the Offer Name:</label>
+                        <input type="text" placeholder="New Offers..." id="offername"/>
+                    </div>
+                    <div class="inputBox">
+                            <label>Enter the Offer Description:</label>
+                            <input type="text" placeholder="Description" id="offerDes"/>
+                    </div>
+                    <div class="inputBox">
+                            <label>Enter the Extra Offer Details:</label>
+                            <input type="text" placeholder="Extra Offers..." id="extraOff"/>
+                    </div>
+                    <div class="inputBox">
+                            <label>Enter the COUPON CODE:</label>
+                            <input type="text" placeholder="COUPONS..." id="coupon"/>
+                    </div>
+                    <div class="inputBox">
+                            <label>Enter the Image Url:</label>
+                            <input type="text" placeholder="Image Url..." id="image"/>
+                    </div>
+                    <div class="inputBox">
+                            <label>Enter the Priority(Value range(5 - 1)):</label>
+                            <input type="text" placeholder="Prioritize the Offer here..." id="ppty"/>
+                    </div>
+                    <div class="primaryBtn modalOfferbtn" onclick="offerSubmit()">
+                        Add Offer
+                    </div>
+                    
+                </div>
+            </div>
+        <div id="root">
+            <div class="bgGradient">
+                <div class="page-section sticky-scroll topSection appendBottom40" id="SW">
+                    <div data-cy="landingContainer" class="landingContainer  ">
+                        <div class="makeFlex hrtlCenter prependTop5 appendBottom40">
+                            <a data-cy="mmtLogo" class="mmtLogo makeFlex">
+                                <img src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png" alt="Make My Trip"/>
+                            </a>
+                            <ul class="userSection pushRight">
+                                <li data-cy="mmtDoubleBlack" class="makeFlex hrtlCenter lhDBlack">
+                                    <span class="landingSprite mmtBlackIcon appendRight5"></span>
+                                    <div class="makeFlex column flexOne font10 whiteText">
+                                        <p class="appendBottom2">MMT
+                                            <span class="latoBlack">DOUBLEBLACK </span>
+                                        </p>
+                                        <p class="font8">Free Cancellation Assured</p>
+                                    </div>
+                                </li>
+                                <li data-cy="myTrips" class="makeFlex hrtlCenter lhMyTrips">
+                                    <span class="landingSprite myTripsIcon appendRight10"></span>
+                                    <div class="makeFlex column flexOne font10 latoBold">
+                                        <p class="whiteText appendBottom3">My Trips </p>
+                                    </div>
+                                </li>
+                                <li data-cy="support" class="makeFlex hrtlCenter lhSupport">
+                                    <span class="landingSprite supportIcon appendRight10"></span>
+                                    <div class="makeFlex column flexOne font10 latoBold">
+                                        <p class="whiteText appendBottom3">24x7 </p>
+                                        <p class="userPerText"> Support</p>
+                                    </div>
+                                </li>
+                                <li data-cy="Wallet" class="makeFlex hrtlCenter lhMyWallet">
+                                    <span class="landingSprite walletBlanceIcon appendRight10"></span>
+                                    <span></span>
+                                </li>
+                                <li data-cy="myBiz" class="makeFlex perfectCenter myBizIntro">
+                                    <span class=" landingSprite myBizIcon  appendRight10"></span>
+                                    <div class="appendRight5">
+                                        <p class="latoBold font16 whiteText">Introducing myBiz</p>
+                                        <p class="font10 whiteText">Save more on business travel</p>
+                                    </div>
+                                </li>
+                                <li data-cy="account" class="makeFlex hrtlCenter font10 makeRelative lhUser ">
+                                    <span class="userNameIcon whiteText makeFlex perfectCenter latoBlack appendRight10">
+                                        <span class="landingSprite myIconWhite"></span>
+                                    </span>
+                                    <div class="makeFlex column flexOne whiteText latoBold">
+                                        <p> Login or Create Account</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="headerOuter">
+                            <div class="chHeaderWrapper     navOnly">
+                                <div class="chHeaderContainer">
+                                    <span class="logoContainer">
+                                        <a class="chMmtLogo" href="https://www.makemytrip.com/">
+                                            <img src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png" alt="MMT&#x27;s LOGO"/>
+                                        </a>
+                                    </span>
+                                    <nav class="" style="
+                                    border-radius: 10px;
+                                    padding-top: 10px;
+                                ">
+                                        <ul class="makeFlex font12">
+                                            <li data-cy="menu_Flights" class=" ">
+                                                <a href="https://www.makemytrip.com/flights/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chFlights   "style="
+    width: 43px;
+    height: 34px;
+"></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Flights
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_Hotels" class=" ">
+                                                <a href="https://www.makemytrip.com/hotels/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chHotels "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Hotels
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_VillasApts" class=" ">
+                                                <a href="https://www.makemytrip.com/homestays/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chHomestays "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Villas &amp; Apts
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_Holidays" class=" ">
+                                                <a href="https://www.makemytrip.com/holidays-india/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chHolidays "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Holidays
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_Trains" class=" ">
+                                                <a href="https://www.makemytrip.com/railways/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chTrains "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Trains
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_Buses" class=" ">
+                                                <a href="https://www.makemytrip.com/bus-tickets/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chBuses "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Buses
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_Cabs" class=" ">
+                                                <a href="https://www.makemytrip.com/cabs/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chCabs "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Cabs
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_Visa" class=" ">
+                                                <a href="https://www.makemytrip.com/visa/" class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chVisa "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Visa
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_Giftcards" class=" ">
+                                                <a href="https://www.makemytrip.com/gift-cards/?intid=Header_ch_giftcard" class=" makeFlex hrtlCenter column" target="_blank">
+                                                    <span class="chNavIcon appendBottom2 chSprite chGiftcards "></span>
+                                                    <span class="chNavText darkGreyText">
+                                                        <!-- -->Giftcards
+                                                        <!-- -->
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li data-cy="menu_More" class="moreItem ">
+                                                <a class=" makeFlex hrtlCenter column">
+                                                    <span class="chNavIcon appendBottom2 chSprite chMore "></span>
+                                                    <span class="chNavText">
+                                                        <span class="darkGreyText">
+                                                            <!-- -->More
+                                                            <!-- -->
+                                                        </span>
+                                                        <!-- <span class="arrow arrowDown"></span> -->
+                                                    </span>
+                                                </a>
+                                             <!--   <div class="moreOption font16 latoBold">
+                                                    <a data-cy="submenu_MyBiz" class="appendBottom5 blackText" href="//mybiz.makemytrip.com/">
+                                                        <!-- My Biz
+                                                    </a>
+                                                    <a data-cy="submenu_InternationalFlights" class="appendBottom5 blackText" href="https://www.makemytrip.com/international-flights/">
+                                                        <!-- International Flights
+                                                    </a>
+                                                    <a data-cy="submenu_InternationalHotels" class="appendBottom5 blackText" href="https://www.makemytrip.com/hotels-international/">
+                                                        <!-- International Hotels
+                                                    </a>
+                                                    <a data-cy="submenu_Deals" target="_blank" class="appendBottom5 blackText" href="https://www.makemytrip.com/daily-deals/">
+                                                        <!-- Deals
+                                                    </a>
+                                                    <a data-cy="submenu_Blog" target="_blank" class="appendBottom5 blackText" href="https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories">
+                                                        <!-- Blog
+                                                    </a>
+                                                </div>-->
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <ul class="makeFlex hrtlCenter font10 blackText">
+                                        <li class="font12 makeRelative">
+                                            <div id="loginTrigger" class="makeFlex cursorPointer">
+                                                <span class="userInfoBoxLabel whiteText appendRight10 font10 latoBlack textCenter">
+                                                    <span class="chSprite chLoggedOutLogo chMy"></span>
+                                                </span>
+                                                <div class="makeFlex hrtlCenter">
+                                                    <div data-cy="account" class="makeFlex spaceBetween column">
+                                                        <span class="latoBold appendBottom2">
+                                                            <!-- -->Login or
+                                                            <!-- -->
+                                                        </span>
+                                                        <span class="latoBold">
+                                                            <!-- -->Create Account
+                                                            <!-- -->
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widgetLoader"></div>
+                    
+                </div>
+
+            
+                <div class="minContainer">
+                
+  
+                                    <div data-cy="flightSW" class="widgetSection appendBottom40">
+                                        <div class="makeFlex">
+                                            <ul class="fswTabs latoBlack greyText">
+                                                <li data-cy="oneWayTrip" class="">
+                                                    <span class="tabsCircle appendRight5"></span>Oneway
+                                                </li>
+                                                <li data-cy="roundTrip" class="selected">
+                                                    <span class="tabsCircle appendRight5"></span>Round Trip
+                                                </li>
+                                                <li data-cy="mulitiCityTrip" class="">
+                                                    <span class="tabsCircle appendRight5"></span>Multi City
+                                                </li>
+                                            </ul>
+                                            <div class="pushRight">
+                                                <h1>Book
+                                                    <a href="/flights/" class="darkGreyText"> Domestic </a>and
+                                                    <a href="/international-flights/" class="darkGreyText"> International </a>flights
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        <div class="fsw ">
+                                            <div class="fsw_inner ">
+                                                <div class="fsw_inputBox searchCity inactiveWidget ">
+                                                    <label for="fromCity">
+                                                        <span class="lbl_input latoBold  appendBottom5">From</span>
+                                                        <input data-cy="fromCity" id="fromCity" type="text" class="fsw_inputField font30 lineHeight36 latoBlack" readonly="" value="Delhi">
+                                                            <p class="code makeRelative" title="DEL, Delhi Airport India">
+                                                                <span class="truncate airPortName">DEL, Delhi Airport India</span>
+                                                            </p>
+                                                        </label>
+                                                    </div>
+                                                    <span class="swipCircle">
+                                                        <span class="landingSprite swipIcon"></span>
+                                                    </span>
+                                                    <div class="fsw_inputBox searchToCity inactiveWidget ">
+                                                        <label for="toCity">
+                                                            <span class="lbl_input latoBold  appendBottom5">To</span>
+                                                            <input data-cy="toCity" id="toCity" type="text" class="fsw_inputField font30 lineHeight36 latoBlack" readonly="" value="Bangalore">
+                                                                <p class="code makeRelative" title="BLR, Kempegowda International Airport India">
+                                                                    <span class="truncate airPortName">BLR, Kempegowda International Airport India</span>
+                                                                </p>
+                                                            </label>
+                                                        </div>
+                                                        <div class="fsw_inputBox dates inactiveWidget ">
+                                                            <label for="departure">
+                                                                <span class="lbl_input latoBold appendBottom10">DEPARTURE</span>
+                                                                <input data-cy="departure" id="departure" type="text" class="fsw_inputField font20" readonly="" value="Thursday, 5 Dec 2019">
+                                                                    <p data-cy="departureDate" class="blackText font20 code">
+                                                                        <span class="font30 latoBlack ">6 </span>
+                                                                        <span>Dec</span>
+                                                                        <span class="shortYear">19</span>
+                                                                    </p>
+                                                                    <p data-cy="departureDay" class="code">Friday</p>
+                                                                </label>
+                                                            </div>
+                                                            <div class="fsw_inputBox dates reDates inactiveWidget  shiftModal">
+                                                                <label for="return">
+                                                                    <span class="lbl_input latoBold appendBottom10">RETURN</span>
+                                                                    <input data-cy="return" id="return" type="text" class="fsw_inputField font20" readonly="" value="Saturday, 7 Dec 2019">
+                                                                        <p data-cy="returnDate" class="blackText font20 code">
+                                                                            <span class="font30 latoBlack ">7 </span>
+                                                                            <span>Dec</span>
+                                                                            <span class="shortYear">19</span>
+                                                                        </p>
+                                                                        <p data-cy="returnDay" class="code">Saturday</p>
+                                                                    </label>
+                                                                    <p class="dateErrorMsgForFlight whiteText" id="range_error">You are booking for more than 30 days</p>
+                                                                    <span class="returnCross landingSprite"></span>
+                                                                </div>
+                                                                <div data-cy="flightTraveller" class="fsw_inputBox flightTravllers inactiveWidget ">
+                                                                    <label for="travellers">
+                                                                        <span class="lbl_input latoBold appendBottom10">Travellers &amp; CLASS</span>
+                                                                        <input data-cy="travellers" id="travellers" type="text" class="fsw_inputField font30 latoBlack" readonly="" value="0 Infant, 0 Adult, 1 Children">
+                                                                            <p class="blackText font20 code">
+                                                                                <span data-cy="travellerText" class="appendRight10">
+                                                                                    <span class="font30 latoBlack">1</span> Traveller
+                                                                                </span>
+                                                                            </p>
+                                                                            <p>Economy</p>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="makeFlex hrtlCenter appendBottom20">
+                                                                    <ul class="specialFare">
+                                                                        <li class="font12 blackText latoBold activeItem ">Regular Fare</li>
+                                                                        <li class="font12 blackText latoBold  ">Student Fare
+                                                                            <div class="specialFareTooltip font12 whiteText">
+                                                                                <p class="latoBold appendBottom3">Student Fare</p>
+                                                                                <p class="lineHeight14">Students above 12 years of age are eligible for special fares and/or additional baggage allowances on certain airline bookings. Carrying valid student ID cards and student visas (where applicable) is mandatory.</p>
+                                                                            </div> 
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="makeFlex perfectCenter ">
+                                                                        <span class="font12 latoBold">Trending Searches:</span>
+                                                                        <ul class="recentSearches">
+                                                                            <li>
+                                                                                <a class="darkGreyText" href="javascript:void(0)">
+                                                                                    <p class="font12 appendBottom3">Mumbai
+                                                                                        <span class="blueOnewayArrowIcon landingSprite appendLeft5 appendRight5"></span>Goa
+                                                                                    </p>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="darkGreyText" href="javascript:void(0)">
+                                                                                    <p class="font12 appendBottom3">Delhi
+                                                                                        <span class="blueOnewayArrowIcon landingSprite appendLeft5 appendRight5"></span>Dubai
+                                                                                    </p>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="darkGreyText" href="javascript:void(0)">
+                                                                                    <p class="font12 appendBottom3">Delhi
+                                                                                        <span class="blueOnewayArrowIcon landingSprite appendLeft5 appendRight5"></span>Kolkata
+                                                                                    </p>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <p data-cy="submit" class="makeFlex vrtlCenter ">
+                                                                    <a class="primaryBtn font24 latoBlack widgetSearchBtn ">Search</a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <main class="landingContainer">
+                                                            <div class="landingCard appendBottom40 superOfferSection page-section sticky-scroll" id="Offers_Listing">
+                                                                <div class="makeFlex blackText latoBold">
+                                                                    <h2>
+                                                                        <font color="#393939">Super Offers</font>
+                                                                    </h2>
+                                                                    <div class="makeFlex perfectCenter">
+                                                                        <ul data-cy="SuperOffers" class="makeFlex capText superOffersTab appendLeft30">
+                                                                            <li data-cy="ALL" class="active latoBlack ">
+                                                                                <a class="makeFlex hrtlCenter column darkGreyText">
+                                                                                    <span> All Offers </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li data-cy="BANK_OFFERS" class="latoBlack  ">
+                                                                                <a class="makeFlex hrtlCenter column darkGreyText">
+                                                                                    <span> Bank Offers </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li data-cy="DOM_HOTELS" class="latoBlack  ">
+                                                                                <a class="makeFlex hrtlCenter column darkGreyText">
+                                                                                    <span> Domestic Hotels </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li class="latoBlack moreItem ">
+                                                                                <span class="pointer">
+                                                                                    <span data-cy="More"> More </span>
+                                                                                    <span class="appendLeft5" data-cy="More_value"></span>
+                                                                                    <span class="arrow arrowDown"></span>
+                                                                                </span>
+                                                                            </li>
+                                                                            <li data-cy="DOM_HOTELS" class="latoBlack  ">
+                                                                                <a class="makeFlex hrtlCenter column darkGreyText" >
+                                                                                    <span class="primaryBtn " onclick="addOffer()" style="padding: 10px 10px 10px 10px;
+                                                                                    margin-left: 160px;" > Add Offers </span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <span data-cy="superOfferSA" class="slideArrow pushRight appendTop10"> &nbsp;</span>
+                                                                </div>
+                                                                <div data-cy="superOffers" class="landingCardSlider superOffers">
+                                                                    <div class="slick-slider slick-initialized" dir="ltr">
+                                                                        <button type="button" data-role="none" onclick="prevOff()" class="slick-arrow slick-prev slick-disabled" style="display: block;"> Previous</button>
+                                                                        <div class="slick-list">
+                                                                            <div class="slick-track" id="slicks">
+                                                                                <div data-index="0"  class="slick-slide slick-active ss slick-current " id="highPriority" tabindex="-1" aria-hidden="false" style="outline: none; width: 478px;">
+                                                                                    <div>
+                                                                                        <div data-cy="suUrl-0" data-cy-url="https://www.makemytrip.com/promos/df-mmtsbi-10102019.html" class="slideItem" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                            <div class="makeFlex column itemCard soCardHeight pointer">
+                                                                                                <div class="makeFlex cardInnerInfo">
+                                                                                                    <div class="itemThumb makeFlex column hrtlCenter appendRight20">
+                                                                                                        <div class="itemImgWrap makeRelative" data-cy="superOfferImage0">
+                                                                                                            <img src="https://promos.makemytrip.com/store//df-sbi-15052019-116x116.png" alt="">
+                                                                                                                <span class="validTag whiteText font10"> Offer ends in 01d:13h:39m</span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="itemDesc latoBlack">
+                                                                                                            <p data-cy="superOfferLobLabel0" class=" categTitle capText greyText appendBottom20 soTitleMinHeight">DOM FLIGHTS</p>
+                                                                                                            <p data-cy="superOfferPtl0" class="blackText font18 lineHeight22 appendBottom10 ">Get 10% Instant Discount on Domestic Flights!</p>
+                                                                                                            <span class="redBdr appendBottom10"></span>
+                                                                                                            <p data-cy="superOfferPtx0" class="font12 lineHeight14 greyText">Exclusive offer* on SBI Credit Cards</p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <p class="makeFlex hrtlCenter">
+                                                                                                        <span data-cy="superOfferUrl0" class="darkGreyText font10 tcApplyText appendRight20"> T&amp;C's Apply </span>
+                                                                                                        <span class="makeFlex flexOne spaceBetween font16">
+                                                                                                            <span data-cy="superOfferCC0" class="latoRegular pointer">COUPON: MMTSBI</span>
+                                                                                                            <a data-cy="superOfferCtaText0" class="latoBlack pushRight">Book Now</a>
+                                                                                                        </span>
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div data-index="1"  class="slick-slide ss slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 478px;">
+                                                                                        <div>
+                                                                                            <div data-cy="suUrl-1" data-cy-url="https://www.makemytrip.com/promos/ih-newyearsale-05122019.html" class="slideItem" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                                <div class="makeFlex column itemCard soCardHeight pointer">
+                                                                                                    <div class="makeFlex cardInnerInfo">
+                                                                                                        <div class="itemThumb makeFlex column hrtlCenter appendRight20">
+                                                                                                            <div class="itemImgWrap makeRelative" data-cy="superOfferImage1">
+                                                                                                                <img src="https://promos.makemytrip.com/store//IH-CNY-04122019-116x116.png" alt="">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="itemDesc latoBlack">
+                                                                                                                <p data-cy="superOfferLobLabel1" class=" categTitle capText greyText appendBottom20 soTitleMinHeight">INTL HOTELS</p>
+                                                                                                                <p data-cy="superOfferPtl1" class="blackText font18 lineHeight22 appendBottom10 ">Christmas &amp; New Year Deal on Intl Hotels!</p>
+                                                                                                                <span class="redBdr appendBottom10"></span>
+                                                                                                                <p data-cy="superOfferPtx1" class="font12 lineHeight14 greyText">Celebrate with up to 35% OFF* on international hotels</p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <p class="makeFlex hrtlCenter">
+                                                                                                            <span data-cy="superOfferUrl1" class="darkGreyText font10 tcApplyText appendRight20"> T&amp;C's Apply </span>
+                                                                                                            <span class="makeFlex flexOne spaceBetween font16">
+                                                                                                                <span data-cy="superOfferCC1" class="latoRegular pointer">COUPON: NEWYEARSALE</span>
+                                                                                                                <a data-cy="superOfferCtaText1" class="latoBlack pushRight">Book Now</a>
+                                                                                                            </span>
+                                                                                                        </p>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        
+                                                                                        <div data-index="2" class="slick-slide ss slick-active " id="avgPriority" tabindex="-1" aria-hidden="false" style="outline: none; width: 478px;">
+                                                                                            <div>
+                                                                                                <div data-cy="suUrl-2" data-cy-url="https://www.makemytrip.com/promos/dh-mmtsbi-10102019.html" class="slideItem" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                                    <div class="makeFlex column itemCard soCardHeight pointer">
+                                                                                                        <div class="makeFlex cardInnerInfo">
+                                                                                                            <div class="itemThumb makeFlex column hrtlCenter appendRight20">
+                                                                                                                <div class="itemImgWrap makeRelative" data-cy="superOfferImage2">
+                                                                                                                    <img src="https://promos.makemytrip.com/store//dh-sbi-15052019-116x116.png" alt="">
+                                                                                                                        <span class="validTag whiteText font10"> Offer ends in 01d:13h:39m</span>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="itemDesc latoBlack">
+                                                                                                                    <p data-cy="superOfferLobLabel2" class=" categTitle capText greyText appendBottom20 soTitleMinHeight">DOM HOTELS</p>
+                                                                                                                    <p data-cy="superOfferPtl2" class="blackText font18 lineHeight22 appendBottom10 ">FLAT 28% Instant Discount* on Domestic Hotels</p>
+                                                                                                                    <span class="redBdr appendBottom10"></span>
+                                                                                                                    <p data-cy="superOfferPtx2" class="font12 lineHeight14 greyText">Exclusive offer* on SBI Credit Cards</p>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <p class="makeFlex hrtlCenter">
+                                                                                                                <span data-cy="superOfferUrl2" class="darkGreyText font10 tcApplyText appendRight20"> T&amp;C's Apply </span>
+                                                                                                                <span class="makeFlex flexOne spaceBetween font16">
+                                                                                                                    <span data-cy="superOfferCC2" class="latoRegular pointer">COUPON: MMTSBI</span>
+                                                                                                                    <a data-cy="superOfferCtaText2" class="latoBlack pushRight">Book Now</a>
+                                                                                                                </span>
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div id ="lowPriority"></div>
+                                                                                            <!-- <div data-index="3" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="4" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="5" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="6" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="7" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="8" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="9" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="10" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="11" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="12" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="13" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="14" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="15" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="16" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="17" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="18" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="19" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="20" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="21" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="22" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="23" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="24" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="25" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="26" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="27" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="28" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="29" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="30" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="31" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="32" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="33" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="34" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="35" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="36" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="37" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="38" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="39" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="40" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="41" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="42" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="43" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="44" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="45" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="46" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="47" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="48" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="49" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="50" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="51" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="52" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="53" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="54" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="55" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="56" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="57" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="58" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="59" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="60" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="61" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="62" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="63" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="64" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="65" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="66" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="67" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="68" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="69" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="70" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="71" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="72" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="73" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="74" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="75" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="76" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="77" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="78" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="79" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="80" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="81" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="82" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="83" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="84" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="85" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="86" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="87" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="88" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="89" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div>
+                                                                                            <div data-index="90" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 478px;"></div> -->
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <button type="button" data-role="none" onclick="superClick()" class="slick-arrow slick-next" style="display: block;"> Next</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="landingCard appendBottom40 travelBlog">
+                                                                            <div class="makeFlex column blackText latoBold appendBottom20">
+                                                                                <h2>
+                                                                                    <font color="#393939">Travel Blog</font>
+                                                                                </h2>
+                                                                                <p class="font22 makeFlex latoRegular appendTop5">
+                                                                                    <span class="makeFlex pushRight">
+                                                                                        <a data-cy="travelBlogViewAll" href="https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories" class=" makeFlex hrtlCenter font16 blueText latoBlack appendRight20">VIEW ALL
+                                                                                            <span class="blueArrowIcon landingSprite appendLeft10"></span>
+                                                                                        </a>
+                                                                                        <span class="slideArrow pushRight" data-cy="travelBlogSA"> &nbsp;</span>
+                                                                                    </span>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="landingCardSlider" data-cy="travelBlog">
+                                                                                <div class="slick-slider slick-initialized" dir="ltr">
+                                                                                    <button type="button"  data-role="none" class="slick-arrow slick-prev slick-disabled" style="display: block;"> Previous</button>
+                                                                                    <div class="slick-list">
+                                                                                        <div class="slick-track" id="slicks">
+                                                                                            <div data-index="0" class="slick-slide ss slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 273px;">
+                                                                                                <div>
+                                                                                                    <a data-cy="BlogLink-0" data-cy-url="http://www.makemytrip.com/blog/service-apartments-in-goa" class="slideItem pointer" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                                        <div class="makeFlex itemCard column">
+                                                                                                            <img class="travelBlogImgWrap appendBottom10" src="https://seoimgak.mmtcdn.com/blog/sites/default/files/HERO_13.jpg?P_BiOHqrPtGKUB5EeN9nFMWhw8qr2w2m" alt="" data-cy="travelBlogImage0">
+                                                                                                                <p class="font16 lineHeight22 blackText paddingLR20 appendBottom10 minHeight45" data-cy="travelBlogTitle0">Goa on a Shoe-string Budget? Check out These Chic Apart...</p>
+                                                                                                            </div>
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div data-index="1" class="slick-slide ss slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 273px;">
+                                                                                                    <div>
+                                                                                                        <a data-cy="BlogLink-1" data-cy-url="http://www.makemytrip.com/blog/honeymoon-destinations-outside-india" class="slideItem pointer" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                                            <div class="makeFlex itemCard column">
+                                                                                                                <img class="travelBlogImgWrap appendBottom10" src="https://seoimgak.mmtcdn.com/blog/sites/default/files/Top honeymoon destinations outside india.jpg?I_UBOkcwUbVnQ8PWJiICDjBrziTJvr5Q" alt="" data-cy="travelBlogImage1">
+                                                                                                                    <p class="font16 lineHeight22 blackText paddingLR20 appendBottom10 minHeight45" data-cy="travelBlogTitle1">The Top Honeymoon Destinations Outside India, Shortlist...</p>
+                                                                                                                </div>
+                                                                                                            </a>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div data-index="2" class="slick-slide ss slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 273px;">
+                                                                                                        <div>
+                                                                                                            <a data-cy="BlogLink-2" data-cy-url="http://www.makemytrip.com/blog/best-hotels-in-shirdi" class="slideItem pointer" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                                                <div class="makeFlex itemCard column">
+                                                                                                                    <img class="travelBlogImgWrap appendBottom10" src="https://seoimgak.mmtcdn.com/blog/sites/default/files/hero_278.jpg?Av_x8b45A9GH9l4ZsRROjt5WCUKtfUil" alt="" data-cy="travelBlogImage2">
+                                                                                                                        <p class="font16 lineHeight22 blackText paddingLR20 appendBottom10 minHeight45" data-cy="travelBlogTitle2">5 Best Hotels in Shirdi for that Divine Experience!</p>
+                                                                                                                    </div>
+                                                                                                                </a>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div data-index="3" class="slick-slide ss slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 273px;">
+                                                                                                            <div>
+                                                                                                                <a data-cy="BlogLink-3" data-cy-url="http://www.makemytrip.com/blog/offbeat-cities-for-a-romantic-trip-to-europe" class="slideItem pointer" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                                                    <div class="makeFlex itemCard column">
+                                                                                                                        <img class="travelBlogImgWrap appendBottom10" src="https://seoimgak.mmtcdn.com/blog/sites/default/files/Budapest.jpg?u2bQ6PUuBnpC7fkIMrOtgXASC4eHu3Ze" alt="" data-cy="travelBlogImage3">
+                                                                                                                            <p class="font16 lineHeight22 blackText paddingLR20 appendBottom10 minHeight45" data-cy="travelBlogTitle3">Done with Paris and Switzerland? Visit These Beautiful ...</p>
+                                                                                                                        </div>
+                                                                                                                    </a>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div data-index="4" class="slick-slide slick-active" tabindex="-1" aria-hidden="false" style="outline: none; width: 273px;">
+                                                                                                                <div>
+                                                                                                                    <a data-cy="BlogLink-4" data-cy-url="http://www.makemytrip.com/blog/romantic-hotels-in-dubai" class="slideItem pointer" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                                                                                        <div class="makeFlex itemCard column">
+                                                                                                                            <img class="travelBlogImgWrap appendBottom10" src="https://seoimgak.mmtcdn.com/blog/sites/default/files/HI-1_167.jpg" alt="" data-cy="travelBlogImage4">
+                                                                                                                                <p class="font16 lineHeight22 blackText paddingLR20 appendBottom10 minHeight45" data-cy="travelBlogTitle4">Romantic Hotels in Dubai for a Rejuvenating Couple Geta...</p>
+                                                                                                                            </div>
+                                                                                                                        </a>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <button type="button"  data-role="none" class="slick-arrow slick-next" style="display: block;"> Next</button>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <ul class="stickyScroll makeFlex column zIndex14" id="stickyScroll"></ul>
+                                                                                        </main>
+                                                                                    </div>
+                    
+                    </div>
+                <div class="minContainer"></div>
+                <footer class="appendTop30">
+                    <div class="landingContainer">
+                        <div class="makeFlex appendBottom40 footerLinks">
+                            <ul class="makeFlex column font12">
+                                <li class="appendBottom5">
+                                    <span class="landingSprite proOfferIcon"></span>
+                                </li>
+                                <li class="appendBottom10">
+                                    <span class="latoBlack darkGreyText font10 capText">Product Offering</span>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/">Flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/international-flights/">International Flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/">Hotels</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels-international/">International Hotels</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-india">Holidays In India</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-international">International Holidays</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://mybiz.makemytrip.com/?intid=mmtfooter_productoffering">myBiz for SME Travel</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/cabs">Cabs</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.us">Cheap Tickets to India</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/bus-tickets/">Bus Tickets</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/railways/">Train Tickets</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/routeplanner/">Route Planner</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/flight-status.html">Flight Status</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/new_hlp/promo_page/">Mobile Apps</a>
+                                </li>
+                            </ul>
+                            <ul class="makeFlex column font12">
+                                <li class="appendBottom5">
+                                    <span class="landingSprite footerMyIcon"></span>
+                                </li>
+                                <li class="appendBottom10">
+                                    <span class="latoBlack darkGreyText font10 capText">MakeMyTrip</span>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/about-us/company_profile.php">About Us</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="http://investors.makemytrip.com">Investor Relations</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/about-us/testimonial.do">Testimonial</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="http://reviews.makemytrip.com/reviews/app/landingPage.htm">Reviews</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/about-us/jobs.php">Careers</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://mybiz.makemytrip.com/?intid=mmtfooter_corporatetravel">Corporate Travel</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/travel-guide/">Travel Guide</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/blog/?intid=mmtblog_footer">Travel Blog</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/coupons/">Offers</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://makemytrip.com/gift-cards/">Gift Vouchers</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/coupons/">MakeMyTrip Coupons</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/mytripessentials/index.php">My Trip Essentials</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/daily-deals">Deals</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/blog/?intid=Blog_HomePage_Tab_Stories">Stories</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="http://planner.makemytrip.com/?&amp;intid=Homepage_Tab_Inspirock">Trip Planner</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/csr/mmt_foundation.html">MMT Foundation</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/csr/csr_policy.html">CSR Policy</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="http://www.oktatabyebye.com/">Travel Community</a>
+                                </li>
+                            </ul>
+                            <ul class="makeFlex column font12">
+                                <li class="appendBottom5">
+                                    <span class="landingSprite aboutSiteIcon"></span>
+                                </li>
+                                <li class="appendBottom10">
+                                    <span class="latoBlack darkGreyText font10 capText">About the Site</span>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/support/contact_us.html">Contact Us</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/legal/payment_security.html">Payment Security</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/legal/privacy_policy.html">Privacy Policy</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/legal/user_agreement.html">User Agreement</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/legal/user_agreement.html#tos">Terms of Service</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-international/visa-information.html">Visa Information</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/support/branch-offices.php">More Offices</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://payments.makemytrip.com/easypay/">Make A Payment</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/pwa-hlp/mmtbb/report">Report a defect/MMT Bug Bounty</a>
+                                </li>
+                            </ul>
+                            <ul class="makeFlex column font12">
+                                <li class="appendBottom5">
+                                    <span class="landingSprite partnerProgIcon"></span>
+                                </li>
+                                <li class="appendBottom10">
+                                    <span class="latoBlack darkGreyText font10 capText">Partner Programs</span>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/support/branch-offices.php">Our Retail Stores</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/franchisee/partner_with_us.php">Franchise Program Details</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.fxkart.com/makemytrip?utm_source=MMTAFF">Foreign Exchange</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/mytripessentials/index.php">Reliance – Travel Insurance</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/hotelier-register.htm">List your hotel</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.redbus.com/">Redbus</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.goibibo.com/">Goibibo</a>
+                                </li>
+                            </ul>
+                            <ul class="makeFlex column font12">
+                                <li class="appendBottom5">
+                                    <span class="landingSprite "></span>
+                                </li>
+                                <li class="appendBottom10">
+                                    <span class="latoBlack darkGreyText font10 capText">More Links</span>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/new_delhi-mumbai-cheap-airtickets.html">Delhi Mumbai Flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/airlines.html">Domestic Airlines</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/international-flights/airlines.html">International Airlines</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/indigo-airlines.html">Indigo</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/spicejet.html">Spicejet</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/jet-airways.html">Jet Airways</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/air-asia.html">Air Asia</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/airline-air_india.html">Air India</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/delhi-hotels.html">Delhi Hotels</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/mumbai-hotels.html">Mumbai Hotels</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-india/honeymoon-packages.html">Honeymoon Packages</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-international/singapore-vacation-tour-packages.html">Singapore Tours</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/railways/PNR/">PNR Status</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/railways/indian-railways.html">Indian Railways</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/bus-tickets/kesineni-travels-booking.html">Kesineni Travels</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/bus-tickets/neeta-travels-booking.html">Neeta Travels</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/bus-tickets/rsrtc-online-booking.html">RSRTC</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-india/goa-travel-packages.html">Goa Packages</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-international/thailand-vacation-tour-packages.html">Thailand Packages</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/hotels-near-me.htm">Hotels Near Me</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/cheap-hotels.htm">Cheap Hotels</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://mybiz.makemytrip.com/corporate/corporate-flight-booking.html">Corporate Flight Booking</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/new_delhi-chennai-cheap-airtickets.html">Delhi Chennai Flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-india/family-packages.html">Family packages</a>
+                                </li>
+                            </ul>
+                            <ul class="makeFlex column font12">
+                                <li class="appendBottom5">
+                                    <span class="landingSprite "></span>
+                                </li>
+                                <li class="appendBottom10">
+                                    <span class="latoBlack darkGreyText font10 capText">Important Links</span>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/cheap.html">Cheap Flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/flight-status.html">Flight Status</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/new_delhi-goa-cheap-airtickets.html">Delhi Goa Flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/chennai-mumbai-cheap-airtickets.html">Chennai Mumbai flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/mumbai-hyderabad-cheap-airtickets.html">Mumbai Hyderabad flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/hyderabad-bangalore-cheap-airtickets.html">Hyderabad Bangalore flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/pune-bangalore-cheap-airtickets.html">Pune Bangalore flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/mumbai-jaipur-cheap-airtickets.html">Mumbai Jaipur flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/mumbai-chandigarh-cheap-airtickets.html">Mumbai Chandigarh flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/bangalore-kolkata-cheap-airtickets.html">Bangalore Kolkata flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/hyderabad-vishakhapatnam-cheap-airtickets.html">Hyderabad Visakhapatnam flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/chandigarh-bangalore-cheap-airtickets.html">Chandigarh Bangalore flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/jaipur-mumbai-cheap-airtickets.html">Jaipur Mumbai flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/flights/mumbai-shirdi-cheap-airtickets.html">Mumbai Shirdi flights</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/goa-hotels.html">Hotels In Goa</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/jaipur-hotels.html">Hotels In Jaipur</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/hotels/ooty-hotels.html">Hotels In Ooty</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-india/kerala-travel-packages.html">Kerala Packages</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-india/kashmir-travel-packages.html">Kashmir Packages</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://www.makemytrip.com/holidays-india/ladakh-travel-packages.html">Ladakh Packages</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://visa.makemytrip.com/dubai-visa.html">Dubai/UAE Visa</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://visa.makemytrip.com/singapore-visa.html">Singapore Visa</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://visa.makemytrip.com/malaysia-visa.html">Malaysia Visa</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://visa.makemytrip.com/sri_lanka-visa.html">Sri Lanka Visa</a>
+                                </li>
+                                <li class="appendBottom5">
+                                    <a class="darkGreyText" href="https://visa.makemytrip.com/thailand-visa.html">Thailand Visa</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="appendTop30">
+                        <div class="aboutMMT">
+                            <article class="landingContainer makeFlex spaceBetween grid-3 " itemscope="" itemType="https://schema.org/FAQPage">
+                                <div class="aboutDesc" itemProp="mainEntity" itemscope="" itemType="https://schema.org/Question">
+                                    <p itemProp="name" class="latoBold font16 blackText appendBottom25 lineHeight22 heading">Why MakeMyTrip?</p>
+                                    <div itemProp="acceptedAnswer" itemscope="" itemType="https://schema.org/Answer">
+                                        <div itemProp="text">
+                                            <p class="font12 lineHeight16">The leading player in online flight bookings in India, MakeMyTrip offers great offers, some of the lowest airfares, exclusive discounts and a seamless online booking experience. Flight, hotel and holiday bookings through the desktop or mobile site is a delightfully customer friendly experience, and with just a few clicks you can complete your booking. With features like Instant Discounts, Fare Calendar, MyRewards Program, MyWallet and many more, the overall booking experience with MakeMyTrip constantly adds value to its product and continues to offer the best to its customers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aboutDesc" itemProp="mainEntity" itemscope="" itemType="https://schema.org/Question">
+                                    <p itemProp="name" class="latoBold font16 blackText appendBottom25 lineHeight22 heading">Booking Flights with MakeMyTrip</p>
+                                    <div itemProp="acceptedAnswer" itemscope="" itemType="https://schema.org/Answer">
+                                        <div itemProp="text">
+                                            <p class="font12 lineHeight16">Book your flights tickets with India's leading flight booking company since the year 2000. While booking flights with MakeMyTrip, you can expect the ultimate online booking experience. With premium customer service, 24/7 dedicated helpline for support, and over 5 million delighted customers, MakeMyTrip takes great pride in enabling customer satisfaction. With a cheapest flight guarantee, book your tickets at the lowest airfares. Avail great offers, exclusive deals for loyal customers and get instant updates for your flight status and fare drops.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aboutDesc" itemProp="mainEntity" itemscope="" itemType="https://schema.org/Question">
+                                    <p itemProp="name" class="latoBold font16 blackText appendBottom25 lineHeight22 heading">Domestic Flights with MakeMyTrip</p>
+                                    <div itemProp="acceptedAnswer" itemscope="" itemType="https://schema.org/Answer">
+                                        <div itemProp="text">
+                                            <p class="font12 lineHeight16">MakeMyTrip is India's leading player for flight bookings, and have a dominant position in the domestic flights sector. With the cheapest fare guarantee, experience great value at the lowest price. Instant notifications ensure current flight status, instant fare drops, amazing discounts, instant refunds and rebook options, price comparisons and many more interesting features.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="contactInfoSection">
+                            <div class="landingContainer makeFlex hrtlCenter whiteText">
+                                <div class="appProLink">
+                                    <a class="appendRight20 inlineB" href="https://play.google.com/store/apps/details?id=com.makemytrip">
+                                        <img src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/androidAppImg.png" alt="android"> 
+                                        <!-- <div class="lazyload-placeholder"></div> -->
+                                    </a>
+                                    <a class="inlineB" href="https://itunes.apple.com/us/app/makemytrip/id530488359">
+                                        <img src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/iosAppImg.png" alt="ios">
+                                        <!-- <div class="lazyload-placeholder"></div> -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footerBottom">
+                        <div class="landingContainer makeFlex whiteText">
+                            <div class="socialMediaLinks makeFlex hrtlcenter spaceBetween">
+                                <a class="makeFlex perfectCenter" href="https://twitter.com/makemytrip/">
+                                    <span class="twiiterIcon landingSprite"></span>
+                                </a>
+                                <a class="makeFlex perfectCenter" href="https://www.facebook.com/makemytrip/">
+                                    <span class="facebookIcon landingSprite"></span>
+                                </a>
+                            </div>
+                            <div class="pushRight makeFlex column  textRight">
+                                <p class="appendBottom5 latoBold font16">&copy; 2017 MAKEMYTRIP PVT. LTD.  </p>
+                                <p>Country
+                                    <span class="latoBlack ">
+                                        <a class="bdrWhite" href="https://www.makemytrip.com/"> India</a>
+                                        <a class="bdrWhite" href="https://www.makemytrip.us/"> USA</a>
+                                        <a class="bdrWhite" href="https://www.makemytrip.ae/"> UAE</a>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div></body>
+        <script src="script.js"></script>
+        </html>
