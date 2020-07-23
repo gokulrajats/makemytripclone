@@ -1,6 +1,3 @@
 # makemytripclone
 A sample cloned site of makemytrip.com.
-Gokul Added
-commit1
-commit2
-commit3
+
